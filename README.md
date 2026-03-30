@@ -34,13 +34,15 @@ O **NexoPay** e uma pagina de checkout que simula o fluxo de pagamento de um pro
 
 ### Desktop
 
-> *Adicione aqui um screenshot ou GIF da versao desktop*
+<div align="center">
+  <img src="./imgs/desktop.png" alt="NexoPay - Versao Desktop" width="800">
+</div>
 
 ### Mobile
 
-> *Adicione aqui um screenshot ou GIF da versao mobile*
-
-<!-- Dica: use a extensao GoFullPage no Chrome para capturar a pagina inteira -->
+<div align="center">
+  <img src="./imgs/mobile.png" alt="NexoPay - Versao Mobile" width="300">
+</div>
 
 ## Tecnologias
 
