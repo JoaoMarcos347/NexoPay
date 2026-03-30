@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexoPay</title>
+    <link rel="icon" type="image/png" href="./assets/logo_1.png" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="images">
+        <img src="./assets/logo_1.png" alt="Logo NexoPay" class="logo-icon" />
+        <img src="./assets/logo_2.png" alt="NexoPay" class="logo-text" />
+      </div>
+
+      <div class="boxes">
+        <div class="box1">
+          <section class="meus-dados">
+            <h1><i class="fa-regular fa-circle-user"></i> Meus dados</h1>
+            <p>Aqui você pode ver e editar suas informações pessoais.</p>
+            <form action="#" id="formulario">
+              <fieldset>
+                <legend>Dados pessoais</legend>
+                <div class="form-group">
+                  <label for="nome">Nome</label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite o seu nome"
+                    required
+                  />
+                  <span id="nome-error" style="color: red"></span>
+                </div>
+                <div class="form-group">
+                  <label for="cpf">CPF</label>
+                  <input
+                    type="text"
+                    id="cpf"
+                    name="cpf"
+                    placeholder="000.000.000-00"
+                    maxlength="14"
+                    required
+                  />
+                  <span id="cpf-error" style="color: red"></span>
+                </div>
+                <div class="form-group">
+                  <label for="telefone">Telefone</label>
+                  <input
+                    type="text"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(00) 00000-0000"
+                    maxlength="15"
+                    required
+                  />
+                  <span id="telefone-error" style="color: red"></span>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Endereço</legend>
+                <div class="form-group">
+                  <label for="cep">CEP</label>
+                  <input
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    placeholder="00000-000"
+                    maxlength="9"
+                    required
+                  />
+                  <span id="cep-error" style="color: red"></span>
+                </div>
+                <div class="form-group">
+                  <label for="rua">Rua</label>
+                  <input
+                    type="text"
+                    id="rua"
+                    name="rua"
+                    placeholder="Digite o nome da sua rua"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="numero">Número</label>
+                  <input
+                    type="number"
+                    id="numero"
+                    name="numero"
+                    placeholder="Digite o número da sua casa"
+                    required
+                  />
+                  <input type="checkbox" id="sn" name="sn" />
+                  <label for="sn">S/N</label>
+                </div>
+                <div class="form-group">
+                  <label for="complemento">Complemento</label>
+                  <input
+                    type="text"
+                    id="complemento"
+                    name="complemento"
+                    placeholder="Digite o complemento do seu endereço"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="bairro">Bairro</label>
+                  <input
+                    type="text"
+                    id="bairro"
+                    name="bairro"
+                    placeholder="Digite o nome do seu bairro"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cidade">Cidade</label>
+                  <input
+                    type="text"
+                    id="cidade"
+                    name="cidade"
+                    placeholder="Digite o nome da sua cidade"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="estado">Estado</label>
+                  <input
+                    type="text"
+                    id="estado"
+                    name="estado"
+                    placeholder="Ex: GO"
+                    maxlength="2"
+                    required
+                  />
+                  <span id="estado-error" style="color: red"></span>
+                </div>
+              </fieldset>
+              <button type="submit">Avançar</button>
+            </form>
+          </section>
+        </div>
+        <div class="box2">
+          <section class="resumo">
+            <h2>Resumo</h2>
+            <div class="resumo-item">
+              <p>Black Friday NexoPay</p>
+              <p>10% de desconto em todas as compras</p>
+            </div>
+            <div class="apply-discount">
+              <div class="apply-discount-header" onclick="toggleDiscount()">
+                <span>Aplicar Cupom de Desconto</span>
+                <i id="toggle-icon" class="fa-solid fa-chevron-down"></i>
+              </div>
+              <div class="apply-discount-body" id="apply-discount-body">
+                <input
+                  type="text"
+                  id="discount-code"
+                  placeholder="Digite o cupom"
+                />
+                <button
+                  id="apply-discount"
+                  type="button"
+                  onclick="aplicarDesconto()"
+                >
+                  Aplicar
+                </button>
+                <span
+                  style="display: block; margin-top: 10px; color: green"
+                  id="discount-message"
+                ></span>
+                <p id="total-price">Preço Total: R$ 100,00</p>
+              </div>
+            </div>
+            <div class="icons">
+              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-cc-amex"></i>
+              <i class="fa-brands fa-cc-diners-club"></i>
+              <i class="fa-brands fa-cc-discover"></i>
+              <i class="fa-brands fa-cc-jcb"></i>
+              <i class="fa-brands fa-cc-paypal"></i>
+              <i class="fa-brands fa-cc-stripe"></i>
+              <i class="fa-brands fa-pix"></i>
+            </div>
+            <div class="garantia">
+              <div class="garatia_box">
+                <h3>Você tem 15 dias de garantia</h3>
+                <p>Experimente! Se não gostar, devolvemos o seu dinheiro.</p>
+                <p class="safe">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <strong>Suas informações estão seguras</strong>
+                  <img
+                    src="./assets/safe.png"
+                    alt="Selo de segurança"
+                    class="safe-badge"
+                  />
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          <a href="#">Termos de Uso</a>|
+          <a href="#">Politica de Privacidade</a>|
+          <a href="#">Politica de Reembolso</a>|
+          <a href="#">Politica de Cookies</a>|
+          <a href="#">Politica de Cookies</a>
+        </p>
+      </footer>
+    </main>
+
+    <script src="./formulario.js"></script>
+    <script src="./desconto.js"></script>
+  </body>
+</html>
